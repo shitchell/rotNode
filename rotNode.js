@@ -1,3 +1,5 @@
+var rotClass = "rot13";
+
 function rot13(str) {
     var input = 'ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz';
     var output = 'NOPQRSTUVWXYZABCDEFGHIJKLMnopqrstuvwxyzabcdefghijklm';
@@ -15,10 +17,11 @@ function deRotNode(node) {
             node.setAttribute(key, value);
         }
     }
+    node.classList.remove(rotClass);
 }
 
 document.addEventListener("DOMContentLoaded", function() {
-    var nodes = document.getElementsByClassName("rot13");
+    var nodes = document.getElementsByClassName(rotClass);
     for (let node of nodes) {
         deRotNode(node);
     }
