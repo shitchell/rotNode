@@ -1,15 +1,15 @@
 var rotClass = "rot13";
 
 function rot13(str) {
-    var input = 'ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz';
-    var output = 'NOPQRSTUVWXYZABCDEFGHIJKLMnopqrstuvwxyzabcdefghijklm';
-    var index = x => input.indexOf(x);
-    var translate = x => index(x) > -1 ? output[index(x)] : x;
+    const input = 'ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz';
+    const output = 'NOPQRSTUVWXYZABCDEFGHIJKLMnopqrstuvwxyzabcdefghijklm';
+    let index = x => input.indexOf(x);
+    let translate = x => index(x) > -1 ? output[index(x)] : x;
     return str.split('').map(translate).join('');
 }
 
 function deRotNode(node) {
-    for (let key in node.dataset) {
+    for (const key in node.dataset) {
         value = rot13(node.dataset[key]);
         if (key === "inner") {
             node.innerText = value;
@@ -21,8 +21,8 @@ function deRotNode(node) {
 }
 
 document.addEventListener("DOMContentLoaded", function() {
-    var nodes = document.getElementsByClassName(rotClass);
-    for (let node of nodes) {
+    let nodes = document.getElementsByClassName(rotClass);
+    for (const node of nodes) {
         deRotNode(node);
     }
 });
