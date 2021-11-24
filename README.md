@@ -16,9 +16,9 @@ A javascript library for obfuscating emails and other data on a webpage to help 
 
 Any node with the "rot13" class will have the rot13 algorithm applied to all data attributes.
 
-data-inner | data-foo
+data-inner   | data-foo
 ------------ | -------------
-Adds the resulting text to the node's innerText | Adds the resulting text to the node's foo attribute
+Adds the given text to the node's innerText | Adds the given text to the node's foo attribute
 
 #### Exempli Gratia
 
